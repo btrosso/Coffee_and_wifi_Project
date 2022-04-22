@@ -1,13 +1,16 @@
+import csv
+import os
+from dotenv import load_dotenv
 from flask import Flask, render_template, redirect, url_for
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import SelectField, StringField, SubmitField
 from wtforms.validators import DataRequired, URL
-import csv
 from csv import writer
 
+load_dotenv()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 Bootstrap(app)
 
 
